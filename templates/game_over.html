@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Over</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏆 Game Over</h1>
+    <div class="feedback">{{ message }}</div>
+
+    {% if guesses %}
+      <div class="history">
+        <h2>Your Guesses:</h2>
+        <ul>
+          {% for g in guesses %}
+            <li>{{ g }}</li>
+          {% endfor %}
+        </ul>
+        {% if accuracy is not none %}
+          <p>Accuracy: {{ accuracy|round(2) }}%</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="reset-link">🔄 Play Again</a>
+  </div>
+</body>
+</html>

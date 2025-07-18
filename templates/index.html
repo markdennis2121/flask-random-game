@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>🎯 Guess the Number</h1>
-        <p class="range">I'm thinking of a number between <strong>{{ session.get('start', 1) }}</strong> and <strong>{{ session.get('end', 100) }}</strong>.</p>
-        
-        <form method="POST">
-            <label for="guess">Your Guess:</label>
-            <input type="text" name="guess" id="guess" placeholder="Enter a number or 'q' to quit" required>
-            <button type="submit">Submit</button>
-        </form>
+  <div class="container">
+    <h1>🎯 Guess the Number</h1>
+    <p>Range: <strong>{{ start }}</strong> to <strong>{{ end }}</strong> ({{ difficulty.title() }})</p>
 
-        {% if message %}
-            <div class="feedback">{{ message }}</div>
-        {% endif %}
+    <form method="POST" class="guess-form">
+      <input type="text" name="guess" placeholder="Enter number or Q to quit" autofocus autocomplete="off">
+      <button type="submit">GO!</button>
+    </form>
 
-        <a href="{{ url_for('reset') }}">🔄 Start Over</a>
-    </div>
+    {% if message %}
+      <div class="feedback">{{ message }}</div>
+    {% endif %}
+
+    {% if guesses %}
+      <div class="history">
+        <h2>Previous Guesses:</h2>
+        <ul>
+          {% for g in guesses %}
+            <li>{{ g }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <a href="{{ url_for('reset') }}" class="reset-link">🔄 Restart</a>
+  </div>
 </body>
 </html>

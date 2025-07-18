@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Choose Difficulty</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Guess My Number!</h1>
+    <p>Select a difficulty to start:</p>
+    <form method="POST" class="difficulty-form">
+      <button type="submit" name="difficulty" value="easy"   class="diff-btn easy">Easy <span>1–50</span></button>
+      <button type="submit" name="difficulty" value="medium" class="diff-btn medium">Medium <span>1–100</span></button>
+      <button type="submit" name="difficulty" value="hard"   class="diff-btn hard">Hard <span>1–200</span></button>
+    </form>
+  </div>
+</body>
+</html>

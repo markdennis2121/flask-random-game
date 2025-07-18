@@ -1,27 +1,46 @@
-# 🎯 Flask Number Guessing Game
+# 🎲 Flask Number Guessing Game
 
-A responsive web-based number guessing game built with Flask. Choose your difficulty level and try to guess the secret number. The game gives you hints if you're close, tracks your accuracy, and lets you play again—all with a clean modern UI.
+A responsive, web-based number guessing game built with Flask. Pick your difficulty, guess the secret number, get hot/cold hints, track your accuracy and replay as many times as you like!
 
-## 🚀 Features
+---
 
-- 🔢 Difficulty selection: Easy (1–50), Medium (1–100), Hard (1–200)
-- 🎯 Proximity hints ("Very close!", "Too high!", "Too low!")
-- 📈 Accuracy scoring based on guess precision
-- 🧠 Session-based guess tracking
-- 🔄 Replay and reset options
-- 🎨 Responsive modern UI with custom CSS
+## 📝 Table of Contents
 
-## 🧰 Tech Stack
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Getting Started](#getting-started)  
+- [Usage](#usage)  
+- [Project Structure](#project-structure)  
+- [Future Enhancements](#future-enhancements)  
+- [License](#license)  
+- [Author](#author)  
 
-- Python & Flask
-- HTML5, CSS3
-- Jinja2 templating
-- Session management
-- Responsive design
+---
 
-## 📦 Installation
+## ✨ Features
 
-1. Clone the repo:
-```bash
-git clone https://github.com/markdennis2121/flask-random-game.git
-cd flask-random-game
+- **Difficulty Modes**: Easy (1–50), Medium (1–100), Hard (1–200)  
+- **Proximity Hints**: “Very close!”, “Too high!”, “Too low!”  
+- **Accuracy Scoring**: Score out of 100 based on guess precision  
+- **Guess History**: See all your previous guesses  
+- **Replay & Reset**: Start new games without restarting the server  
+- **Responsive, Game-Like UI**: Modern CSS, centered card layout, speech-bubble feedback  
+
+---
+
+## 🛠 Tech Stack
+
+- Python 3.x  
+- Flask  
+- Jinja2 templating  
+- HTML5 & CSS3  
+- Session management  
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/yourusername/flask-random-game.git
+   cd flask-random-game

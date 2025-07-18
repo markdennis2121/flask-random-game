@@ -1,89 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f0f2f5;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 h1 {
-    color: #1a2b4c;
-    margin-bottom: 10px;
-    font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.range {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
+p {
+  margin-bottom: 20px;
+  color: #555;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Difficulty buttons */
+.difficulty-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-label {
-    font-weight: 600;
-    text-align: left;
-    color: #333;
+.diff-btn {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="text"] {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
+.diff-btn span {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 4px;
 }
 
-input[type="text"]:focus {
-    border-color: #00bfa6;
+.diff-btn:hover {
+  transform: translateY(-3px);
 }
 
-button {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #00bfa6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.diff-btn.easy   { background: #38b2ac; }
+.diff-btn.medium { background: #3182ce; }
+.diff-btn.hard   { background: #e53e3e; }
+
+/* Guess form */
+.guess-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #009e8f;
+.guess-form input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
 }
 
+.guess-form input:focus {
+  border-color: #3182ce;
+}
+
+.guess-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #3182ce;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.guess-form button:hover {
+  background: #2c5282;
+}
+
+/* Feedback bubble */
 .feedback {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #1a2b4c;
-    font-weight: 600;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 8px;
+  color: #333;
+  font-weight: 600;
+  position: relative;
 }
 
-a {
-    display: block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #00aEEF;
-    font-weight: 600;
+.feedback::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #f7fafc transparent;
+}
+
+/* Guess history */
+.history {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.history h2 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.history ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.history li {
+  background: #edf2f7;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Reset link */
+.reset-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.reset-link:hover {
+  text-decoration: underline;
 }
