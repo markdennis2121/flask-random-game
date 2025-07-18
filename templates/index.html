@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Guess the Number</h1>
+        <p class="range">I'm thinking of a number between <strong>{{ session.get('start', 1) }}</strong> and <strong>{{ session.get('end', 100) }}</strong>.</p>
+        
+        <form method="POST">
+            <label for="guess">Your Guess:</label>
+            <input type="text" name="guess" id="guess" placeholder="Enter a number or 'q' to quit" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if message %}
+            <div class="feedback">{{ message }}</div>
+        {% endif %}
+
+        <a href="{{ url_for('reset') }}">🔄 Start Over</a>
+    </div>
+</body>
+</html>
