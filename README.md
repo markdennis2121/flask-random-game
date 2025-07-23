@@ -55,6 +55,3 @@ Deploy to the web via Render or Vercel
 Suggestions and forks are welcome! Feel free to star ⭐ or open an issue.
 
 
----
-
-Want help adding a favicon or turning this into a multi-game hub? You’re turning Flask into a playground — and it’s looking sharp 🧠🎮💻.
